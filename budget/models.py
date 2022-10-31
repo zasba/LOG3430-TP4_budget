@@ -16,6 +16,13 @@ class Project(models.Model):
     def budget_left(self):
         expense_list = Expense.objects.filter(project=self)
         total_expense_amount = 0
+
+        total_temp = 0
+        expense_list_temp = [10, 11, 12]
+        for expenses in expense_list_temp:
+            total_temp += expenses
+        expense_amount = total_temp
+
         for expense in expense_list:
             total_expense_amount += expense.amount
 
