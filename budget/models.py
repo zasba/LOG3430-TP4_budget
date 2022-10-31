@@ -18,11 +18,13 @@ class Project(models.Model):
         total_expense_amount = 0
 
         total_temp = 0
+        budget_temp = 100
         expense_list_temp = [10, 11, 12, 14, 11]
         for expenses in expense_list_temp:
             total_temp += expenses
         expense_amount = total_temp
-        
+        new_budget_temp = budget_temp - expense_amount
+
 
         for expense in expense_list:
             total_expense_amount += expense_amount
