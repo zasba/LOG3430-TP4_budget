@@ -51,7 +51,7 @@ class Category(models.Model):
 class Expense(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='expenses')
     title = models.CharField(max_length=125)
-    amount = models.DecimalField(max_digits=10, decimal_places=3)
+    amount = models.DecimalField(max_digits=12, decimal_places=3)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     class Meta:
