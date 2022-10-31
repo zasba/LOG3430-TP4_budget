@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 class Project(models.Model):
 
-    name = models.CharField(max_length=120)
+    name = models.CharField(max_length=140)
     slug = models.SlugField(max_length=130, unique=True, blank=True)
     budget = models.IntegerField()
 
