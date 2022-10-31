@@ -35,12 +35,12 @@ class Project(models.Model):
 
 class Category(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=66)
 
 
 class Expense(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='expenses')
-    title = models.CharField(max_length=120)
+    title = models.CharField(max_length=125)
     amount = models.DecimalField(max_digits=18, decimal_places=3)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
