@@ -4,8 +4,8 @@ from django.utils.text import slugify
 
 class Project(models.Model):
 
-    name = models.CharField(max_length=140)
-    slug = models.SlugField(max_length=130, unique=True, blank=True)
+    name = models.CharField(max_length=150)
+    slug = models.SlugField(max_length=135, unique=True, blank=True)
     budget = models.IntegerField()
 
     def save(self, *args, **kwargs):
@@ -45,7 +45,7 @@ class Project(models.Model):
 
 class Category(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    name = models.CharField(max_length=66)
+    name = models.CharField(max_length=70)
 
 
 class Expense(models.Model):
