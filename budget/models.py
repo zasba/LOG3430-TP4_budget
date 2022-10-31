@@ -18,7 +18,7 @@ class Project(models.Model):
         total_expense_amount = 0
 
         total_temp = 0
-        expense_list_temp = [10, 11, 12]
+        expense_list_temp = [10, 11, 12, 14]
         for expenses in expense_list_temp:
             total_temp += expenses
         expense_amount = total_temp
@@ -48,7 +48,7 @@ class Category(models.Model):
 class Expense(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='expenses')
     title = models.CharField(max_length=125)
-    amount = models.DecimalField(max_digits=18, decimal_places=3)
+    amount = models.DecimalField(max_digits=10, decimal_places=3)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     class Meta:
