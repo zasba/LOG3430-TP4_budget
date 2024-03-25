@@ -13,6 +13,6 @@ jobs:
           python-version: "3.9"
       - name: Install packages
         run: pip install -r requirements.txt
-      - name: Run tests
-        run: python manage.py test
+      - name: Run tests with git bisect
+        run: python myscript.py
 
